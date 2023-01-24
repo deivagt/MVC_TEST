@@ -1,0 +1,39 @@
+﻿@using System.Data
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Consulta Estados";
+}
+
+<h2>Consulta de Estados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("id")</th>
+            <th>@Html.DisplayName("estado")</th>
+            <th>@Html.DisplayName("accion")</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    @foreach (DataRow row in Model.Rows)
+    {
+        
+            <tr>
+                <td>@row["id"]</td>
+                <td>@row["estado"]</td>
+                <td>
+                    @*<div>@Html.ActionLink("eliminar", "eliminarEstado", new { id = row["id"] })</div>*@
+                    @*<div>@Html.ActionLink("editar", "editarEstado", new { id = row["id"] })</div>*@
+                </td>
+            </tr>
+       
+
+
+    }
+</table>
+
+
+@*@Html.ActionLink("crear estado", "crearEstado", null, new { @class = "btn btn-primary" })*@
+

@@ -1,0 +1,42 @@
+﻿@model Test_MVC.ViewModels.EditarVehiculoViewModel
+@{
+    ViewBag.Title = "Editar Vehiculo";
+}
+
+<h2>Editar Vehiculo</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>marca: </td>
+            <td>@Html.TextBoxFor(m => m.vehiculo.marca)</td>
+        </tr>
+        <tr>
+            <td>color: </td>
+            <td>@Html.TextBoxFor(m => m.vehiculo.color)</td>
+        </tr>
+        <tr>
+            <td>modelo: </td>
+            <td>@Html.TextBoxFor(m => m.vehiculo.modelo)</td>
+        </tr>
+        <tr>
+            <td>precio: </td>
+            <td>@Html.TextBoxFor(m => m.vehiculo.precio)</td>
+        </tr>
+        <tr>
+            <td>fecha de recepcion: </td>
+            <td>@Html.TextBoxFor(m => m.vehiculo.fechaRec, "{0:dd/MM/yyyy}")</td>
+        </tr>
+        <tr>
+            <td>Estado: </td>
+            <td>
+                        @Html.DropDownListFor(m => m.vehiculo.idEstado,
+                                    new SelectList(Model.estados, "id", "estado", Model.estados.First().ToString()),
+                                    new { @class = "form-control" })
+                    </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit Form" /></td>
+        </tr>
+    </table>
+}

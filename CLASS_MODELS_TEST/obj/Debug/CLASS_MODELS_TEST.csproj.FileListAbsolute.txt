@@ -1,0 +1,6 @@
+D:\Repositorios\MVC\Test_Canella_Vehiculos\CLASS_MODELS_TEST\bin\Debug\CLASS_MODELS_TEST.dll
+D:\Repositorios\MVC\Test_Canella_Vehiculos\CLASS_MODELS_TEST\bin\Debug\CLASS_MODELS_TEST.pdb
+D:\Repositorios\MVC\Test_Canella_Vehiculos\CLASS_MODELS_TEST\obj\Debug\CLASS_MODELS_TEST.csproj.AssemblyReference.cache
+D:\Repositorios\MVC\Test_Canella_Vehiculos\CLASS_MODELS_TEST\obj\Debug\CLASS_MODELS_TEST.csproj.CoreCompileInputs.cache
+D:\Repositorios\MVC\Test_Canella_Vehiculos\CLASS_MODELS_TEST\obj\Debug\CLASS_MODELS_TEST.dll
+D:\Repositorios\MVC\Test_Canella_Vehiculos\CLASS_MODELS_TEST\obj\Debug\CLASS_MODELS_TEST.pdb

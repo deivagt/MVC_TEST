@@ -1,0 +1,78 @@
+﻿@using CLASS_MODELS_TEST
+@model Test_MVC.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Consulta Vehiculos";
+}
+
+<h2>Consulta de Vehiculos</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.DropDownListFor(m => m.estadoSel,
+                                 new SelectList(Model.estados, "id", "estado", Model.estados.First().ToString()),
+                                 new { @class = "form-control" })
+
+        <td colspan="2"><input type="submit" value="Consultar" /></td>
+    }
+
+    
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("id")</th>
+            <th>@Html.DisplayName("marca")</th>
+            <th>@Html.DisplayName("color")</th>
+            <th>@Html.DisplayName("modelo")</th>
+            <th>@Html.DisplayName("precio")</th>
+            <th>@Html.DisplayName("fechaRec")</th>
+            <th>@Html.DisplayName("estado")</th>
+            <th>@Html.DisplayName("accion")</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    @foreach (var row in Model.vehiculos)
+    {
+        if (row.idEstado == Model.estadoSel)
+        {
+            <tr>
+                <td>@row.id</td>
+                <td>@row.marca</td>
+                <td>@row.color</td>
+                <td>@row.modelo</td>
+                <td>@row.precio</td>
+                <td>@row.fechaRec</td>
+                <td>@row.estado</td>
+                <td>
+                    <div>@Html.ActionLink("eliminar", "eliminarV", new { id = row.id })</div>
+                    <div>@Html.ActionLink("editar", "editarV", new { id = row.id })</div>
+                </td>
+            </tr>
+        }
+        else if (Model.estadoSel == -1)
+        {
+            <tr>
+                <td>@row.id</td>
+                <td>@row.marca</td>
+                <td>@row.color</td>
+                <td>@row.modelo</td>
+                <td>@row.precio</td>
+                <td>@row.fechaRec</td>
+                <td>@row.estado</td>
+                <td>
+                    <div>@Html.ActionLink("eliminar", "eliminarV", new { id = row.id })</div>
+                    <div>@Html.ActionLink("editar", "editarV", new { id = row.id })</div>
+                </td>
+            </tr>
+        }
+
+
+    }
+</table>
+
+
+@Html.ActionLink("crear vehiculo", "crearV", null, new { @class = "btn btn-primary" })
+
